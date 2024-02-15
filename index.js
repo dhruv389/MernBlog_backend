@@ -19,7 +19,7 @@ app.use('/uploads',express.static(path.join(__dirname,'uploads')));
 
 app.use(express.json({extended:true}));
 app.use(express.urlencoded({extended:true}));
-app.use(cors({credentials:true,origin:"https://cozy-brigadeiros-0c31c8.netlify.app"}))
+app.use(cors({credentials:true,origin:"*"}));
 
 app.use('/api/users',userRoutes);
 app.use('/api/posts',postRoutes);
