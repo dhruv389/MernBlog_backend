@@ -20,7 +20,7 @@ app.use('/uploads',express.static(path.join(__dirname,'uploads')));
 app.use(express.json({extended:true}));
 app.use(express.urlencoded({extended:true}));
 // app.use(cors({credentials:true,origin:"http://localhost:3000"}));
-app.use(cors({credentials:true,origin:"https://65ce3b7c3573be0ab3fdd7cb--spectacular-melba-7c932a.netlify.app"}));
+
 
 app.use('/api/users',userRoutes);
 app.use('/api/posts',postRoutes);
