@@ -1,7 +1,7 @@
 const User = require("../models/userModel");
 const HttpError = require("../models/errorModel");
 const bcrypt = require("bcryptjs");
-const { Http } = require("@material-ui/icons");
+
 const jwt = require("jsonwebtoken");
 const fs = require("fs");
 const path = require("path");
