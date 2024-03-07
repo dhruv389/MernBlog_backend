@@ -15,7 +15,8 @@ const postRoutes= require("./routes/postRoutes")
 
 const app = express();
 
-app.use('/uploads',express.static(path.join(__dirname,'uploads')));
+app.use('/uploads',express.static('./uploads'));
+//app.use('/uploads',express.static(path.join(__dirname,'uploads')));
 
 app.use(express.json({extended:true}));
 app.use(express.urlencoded({extended:true}));
