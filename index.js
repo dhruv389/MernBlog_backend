@@ -20,7 +20,7 @@ app.use('/uploads',express.static('./uploads'));
 
 app.use(express.json({extended:true}));
 app.use(express.urlencoded({extended:true}));
- app.use(cors({credentials:true,origin:["http://localhost:3000","https://blognest-dhaval.netlify.app","https://blognest-phi.vercel.app/"]}));
+ app.use(cors({credentials:true,origin:["http://localhost:3000","https://blognest-dhaval.netlify.app","https://blognest-phi.vercel.app"]}));
 
 
 app.use('/api/users',userRoutes);
