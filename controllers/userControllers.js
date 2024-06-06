@@ -43,7 +43,7 @@ const registerUser = async (req, res, next) => {
     
     const salt = await bcrypt.genSalt(10);
     const hashedPass = await bcrypt.hash(password, salt);
-    console.log(name+"---------"+newEmail+"--------"+hashedPass)
+    
     const newUser = await User.create({
       name,
       email: newEmail,
@@ -299,11 +299,15 @@ const editUser = async (req, res, next) => {
 const getAuthors = async (req, res, next) => {
   try {
     const authors = await User.find().select("-password");
+    
+    
     if (!authors) {
+      console.log("noooohhsh")
       return next(new HttpError("athors not Found", 404));
     }
     res.json(authors);
   } catch (error) {
+    console.log(error);
     return next(new HttpError(error));
   }
 };

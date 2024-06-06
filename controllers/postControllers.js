@@ -27,6 +27,7 @@ const multer = require("multer");
       cb(null, newFilename);
     },
   });
+  console.log(profilename); 
   const upload1 = multer({ storage: storage });
 
 const createPost = async(req,res,next) =>{
@@ -95,9 +96,8 @@ const getPost = async(req,res,next) =>{
 const getPosts = async(req,res,next) =>{
     try {
         const posts= await Post.find().sort({updatedAt:-1});
-
+         
         res.status(200).json(posts);
-
         
     } catch (error) {
         return next(new HttpError(error))
@@ -115,6 +115,7 @@ const getCatPosts = async(req,res,next) =>{
   try {
     const {category}=req.params;
     const catPosts=await Post.find({category}).sort({createdAt:-1});
+  
     res.status(200).json(catPosts);
   } catch (error) {
     return next(new HttpError(error))

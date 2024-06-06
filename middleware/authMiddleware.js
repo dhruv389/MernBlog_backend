@@ -7,7 +7,8 @@ const authMiddleware = async (req,res,next) =>{
         const token = Authorization.split(' ')[1];
         jwt.verify(token,process.env.JWT_SECRET,(err,info)=>{
             if(err){
-                return next(new HttpError("Unauthorizes. INvalid token",403));
+                // res.redirect('/login');
+                return next(new HttpError("Login again || Your session Expired",403));
             }
             req.user =info;
             next();
