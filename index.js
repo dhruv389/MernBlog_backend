@@ -15,6 +15,7 @@ const postRoutes= require("./routes/postRoutes")
 
 const app = express();
 
+
  app.use('/uploads',express.static(path.join(__dirname,'uploads')));
 // app.use('/uploads',express.static('./uploads'));
 // app.use('/uploads',express.static('/server/uploads'));
@@ -22,6 +23,7 @@ const app = express();
 app.use(express.json({extended:true}));
 app.use(express.urlencoded({extended:true}));
 app.use(cors({credentials:true,origin:["http://localhost:3000/","https://blognest-dhaval.netlify.app","https://blognest-phi.vercel.app"]}));
+
 
 app.use('/api/users',userRoutes);
 app.use('/api/posts',postRoutes);
