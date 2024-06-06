@@ -17,7 +17,7 @@ const multer = require("multer");
   var profilename;
   
   const storage = multer.diskStorage({
-    destination: "./uploads",
+    destination: "../uploads",
     filename: (req, file, cb) => {
       const originalname = file.originalname;
       const ext = path.extname(originalname);
